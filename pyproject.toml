@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nonebot-plugin-zxui"
+version = "0.1.0"
+description = ""
+authors = ["HibiKier <775757368@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nonebot2 = "^2.3.3"
+zhenxun-db-client = "^0.1.1"
+zhenxun-utils = "^0.1.8"
+nonebot-plugin-alconna = "^0.54.1"
+nonebot-plugin-uninfo = "^0.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
