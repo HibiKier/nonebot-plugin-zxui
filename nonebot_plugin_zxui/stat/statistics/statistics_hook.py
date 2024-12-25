@@ -34,7 +34,7 @@ async def _(
     session: Uninfo,
     event: Event,
 ):
-    if getattr(event, "sub_type") == "poke":
+    if matcher.type in ["request", "notice"]:
         return
     if not config.zxui_enable_call_history:
         return

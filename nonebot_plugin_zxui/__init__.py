@@ -1,12 +1,12 @@
+import nonebot
 from nonebot import require
+from nonebot.plugin import PluginMetadata, inherit_supported_adapters
+from zhenxun_db_client import client_db
 
 require("nonebot_plugin_alconna")
 require("nonebot_plugin_session")
 require("nonebot_plugin_uninfo")
 
-import nonebot
-from nonebot.plugin import PluginMetadata, inherit_supported_adapters
-from zhenxun_db_client import client_db
 from zhenxun_utils.enum import PluginType
 
 driver = nonebot.get_driver()
@@ -17,11 +17,11 @@ async def _():
     await client_db(PluginConfig.zxui_db_url)
 
 
-from .config import Config
-from .config import config as PluginConfig
-from .stat import *  # noqa: F403
-from .web_ui import *  # noqa: F403
-from .zxpm import *  # noqa: F403
+from .config import Config  # noqa: E402
+from .config import config as PluginConfig  # noqa: E402
+from .stat import *  # noqa: E402, F403
+from .web_ui import *  # noqa: E402, F403
+from .zxpm import *  # noqa: E402, F403
 
 __plugin_meta__ = PluginMetadata(
     name="小真寻的WebUi",

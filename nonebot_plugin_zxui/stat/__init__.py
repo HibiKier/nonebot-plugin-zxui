@@ -1,3 +1,4 @@
+import contextlib
 from datetime import datetime
 
 import nonebot
@@ -32,5 +33,10 @@ async def _(bot: Bot):
     )
 
 
-from .chat_history import *  # noqa: F403
-from .statistics import *  # noqa: F403
+from .chat_history import *  # noqa: E402, F403
+from .statistics import *  # noqa: E402, F403
+
+with contextlib.suppress(ImportError):
+    from nonebot.adapters.onebot.v11 import GroupIncreaseNoticeEvent  # noqa: F401
+
+    from .record_request import *  # noqa: F403

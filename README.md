@@ -75,6 +75,28 @@ nb plugin install nonebot-plugin-zxui
 | zxpm_limit_superuser               | bool  |           False            | 是否限制超级用户     
 
 
+## 🎉 帮助
+
+### 菜单
+
+菜单文件存储在`data/zxui/menu.json`，可以根据自身需求修改，格式如下：
+
+```json
+[
+    {
+        "module": "dashboard",
+        "name": "仪表盘",
+        "router": "\/dashboard",
+        "icon": "dashboard",
+        "default": true
+    },
+]
+```
+
+### 更新UI
+
+删除`data/zxui/web_ui`文件夹，重新运行插件即可。
+
 ## 🎁 后台示例图
 
 <div align="center">
