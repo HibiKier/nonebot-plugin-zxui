@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-zxui"
-version = "0.1.4"
+version = "0.1.5"
 description = ""
 authors = ["HibiKier <775757368@qq.com>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 nonebot2 = "^2.3.3"
-zhenxun-db-client = "^0.1.1"
+zhenxun-db-client = "^0.1.2"
 zhenxun-utils = "^0.2.2"
 nonebot-plugin-alconna = "^0.54.1"
 nonebot-plugin-uninfo = "^0.6.2"
