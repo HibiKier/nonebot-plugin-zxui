@@ -25,7 +25,7 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的 小真寻WebUi A
 
 [小真寻](https://github.com/HibiKier/zhenxun_bot)具象化了。  
 
-内置了 ZXPM
+内置 [ZXPM插件管理](https://github.com/HibiKier/nonebot-plugin-zxpm)（帮助看这个readme）
 
 > [!NOTE]
 >
@@ -72,10 +72,21 @@ nb plugin install nonebot-plugin-zxui
 | zxpm_admin_default_auth | int  |               5               | 群组管理员默认权限                                               |
 | zxpm_limit_superuser               | bool  |           False            | 是否限制超级用户     
 
-## 🎉 帮助
 
-内置 [ZXPM插件管理](https://github.com/HibiKier/nonebot-plugin-zxpm)（帮助看这个readme）
+## 🎁 后台示例图
 
+<div align="center">
+
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/0.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/1.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/2.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/3.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/4.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/5.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/6.png)
+![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/7.png)
+
+</div>
 
 ## ❤ 感谢
 
