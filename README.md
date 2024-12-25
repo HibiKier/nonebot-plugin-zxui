@@ -78,7 +78,7 @@ nb plugin install nonebot-plugin-zxui
 
 ### 访问地址
 
-默认地址为 `nb地址:nb端口` ，可以在nonebot配置文件.env中益智。
+默认地址为 `nb地址:nb端口` ，可以在nonebot配置文件.env一致。  
 例如 你的env中配置文件为
 ```
 HOST=127.0.0.1
@@ -88,7 +88,8 @@ PORT=8080
 
 ### 菜单
 
-菜单文件存储在`data/zxui/menu.json`，可以根据自身需求修改，格式如下：
+菜单文件存储在`data/zxui/menu.json`，可以根据自身需求修改  
+格式如下：
 
 ```json
 [
@@ -107,9 +108,9 @@ PORT=8080
 删除`data/zxui/web_ui`文件夹，重新运行插件即可。
 
 ## 🎁 后台示例图
-
 <div align="center">
 
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/8.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/0.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/1.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/2.png)
