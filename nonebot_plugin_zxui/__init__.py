@@ -6,6 +6,7 @@ from zhenxun_db_client import client_db
 require("nonebot_plugin_alconna")
 require("nonebot_plugin_session")
 require("nonebot_plugin_uninfo")
+require("nonebot_plugin_apscheduler")
 
 from zhenxun_utils.enum import PluginType
 
