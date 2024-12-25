@@ -4,6 +4,7 @@ from datetime import datetime
 import nonebot
 from nonebot.adapters import Bot
 from nonebot.drivers import Driver
+from tortoise.exceptions import IntegrityError
 from zhenxun_utils.log import logger
 from zhenxun_utils.platform import PlatformUtils
 
@@ -20,9 +21,12 @@ async def _(bot: Bot):
         bot_id=bot.self_id, platform=bot.adapter, connect_time=datetime.now(), type=1
     )
     if not await BotConsole.exists(bot_id=bot.self_id):
-        await BotConsole.create(
-            bot_id=bot.self_id, platform=PlatformUtils.get_platform(bot)
-        )
+        try:
+            await BotConsole.create(
+                bot_id=bot.self_id, platform=PlatformUtils.get_platform(bot)
+            )
+        except IntegrityError:
+            pass
 
 
 @driver.on_bot_disconnect
@@ -33,8 +37,8 @@ async def _(bot: Bot):
     )
 
 
-from .chat_history import *  # noqa: E402, F403
-from .statistics import *  # noqa: E402, F403
+from .chat_history import *  # noqa: F403
+from .statistics import *  # noqa: F403
 
 with contextlib.suppress(ImportError):
     from nonebot.adapters.onebot.v11 import GroupIncreaseNoticeEvent  # noqa: F401
