@@ -83,7 +83,7 @@ nb plugin install nonebot-plugin-zxui
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/1.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/2.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/3.png)
-![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/4.png)
+<!-- ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/4.png) -->
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/5.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/6.png)
 ![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/7.png)
