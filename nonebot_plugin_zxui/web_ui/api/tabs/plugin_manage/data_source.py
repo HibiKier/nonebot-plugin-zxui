@@ -1,11 +1,8 @@
-import re
-
-import cattrs
 from fastapi import Query
 from zhenxun_utils.enum import BlockType, PluginType
 
 from .....models.plugin_info import PluginInfo as DbPluginInfo
-from .model import PluginConfig, PluginDetail, PluginInfo, UpdatePlugin
+from .model import PluginDetail, PluginInfo, UpdatePlugin
 
 
 class ApiDataSource:

@@ -1,12 +1,14 @@
-import time
 from datetime import datetime, timedelta
 from pathlib import Path
+import time
 
 import nonebot
 from nonebot import logger
 from nonebot.adapters import Bot
 from nonebot.drivers import Driver
 from tortoise.functions import Count
+from zhenxun_utils.common_utils import CommonUtils
+from zhenxun_utils.enum import PluginType
 from zhenxun_utils.platform import PlatformUtils
 
 from .....models.bot_connect_log import BotConnectLog
@@ -19,6 +21,7 @@ from ....config import AVA_URL, GROUP_AVA_URL, QueryDateType
 from .model import (
     ActiveGroup,
     BaseInfo,
+    BotBlockModule,
     HotPlugin,
     QueryCount,
     TemplateBaseInfo,
@@ -330,3 +333,32 @@ class ApiDataSource:
         if len(hot_plugin_list) > 5:
             hot_plugin_list = hot_plugin_list[:5]
         return hot_plugin_list
+
+    @classmethod
+    async def get_bot_block_module(cls, bot_id: str) -> BotBlockModule | None:
+        """获取bot层面的禁用模块
+
+        参数:
+            bot_id: bot id
+
+        返回:
+            BotBlockModule | None: 数据内容
+        """
+        bot_data = await BotConsole.get_or_none(bot_id=bot_id)
+        if not bot_data:
+            return None
+        block_tasks = []
+        block_plugins = []
+        all_plugins = await PluginInfo.filter(
+            load_status=True, plugin_type=PluginType.NORMAL
+        ).values("module", "name")
+        if bot_data.block_plugins:
+            plugins = CommonUtils.convert_module_format(bot_data.block_plugins)
+            block_plugins = [t["module"] for t in all_plugins if t["module"] in plugins]
+        return BotBlockModule(
+            bot_id=bot_id,
+            block_tasks=block_tasks,
+            block_plugins=block_plugins,
+            all_plugins=all_plugins,
+            all_tasks=[],
+        )

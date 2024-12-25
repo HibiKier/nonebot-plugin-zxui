@@ -1,6 +1,6 @@
-import nonebot
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
+import nonebot
 from nonebot import logger
 from nonebot.adapters.onebot.v11 import ActionFailed
 from zhenxun_utils.enum import RequestHandleType, RequestType

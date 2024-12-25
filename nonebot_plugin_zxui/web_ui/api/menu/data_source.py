@@ -1,5 +1,5 @@
-import ujson as json
 from nonebot import logger
+import ujson as json
 
 from ....config import DATA_PATH
 from .model import MenuData, MenuItem
@@ -31,9 +31,6 @@ class MenuManage:
                 ),
                 MenuItem(
                     name="插件列表", module="plugin", router="/plugin", icon="plugin"
-                ),
-                MenuItem(
-                    name="插件商店", module="store", router="/store", icon="store"
                 ),
                 MenuItem(
                     name="好友/群组", module="manage", router="/manage", icon="user"

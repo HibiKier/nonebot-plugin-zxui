@@ -1,6 +1,13 @@
-from tortoise import fields
+from typing import Any
 from typing_extensions import Self
+
+from tortoise import fields
+from tortoise.backends.base.client import BaseDBAsyncClient
 from zhenxun_db_client import Model
+from zhenxun_utils.common_utils import CommonUtils
+from zhenxun_utils.enum import PluginType
+
+from ..models.plugin_info import PluginInfo
 
 
 class GroupConsole(Model):
@@ -43,6 +50,58 @@ class GroupConsole(Model):
         table = "group_console"
         table_description = "群组信息表"
         unique_together = ("group_id", "channel_id")
+
+    @classmethod
+    async def create(
+        cls, using_db: BaseDBAsyncClient | None = None, **kwargs: Any
+    ) -> Self:
+        """覆盖create方法"""
+        group = await super().create(using_db=using_db, **kwargs)
+        if modules := await PluginInfo.filter(
+            plugin_type__in=[PluginType.NORMAL, PluginType.DEPENDANT],
+            default_status=False,
+        ).values_list("module", flat=True):
+            group.block_plugin = CommonUtils.convert_module_format(modules)  # type: ignore
+        await group.save(using_db=using_db, update_fields=["block_plugin"])
+        return group
+
+    @classmethod
+    async def get_or_create(
+        cls,
+        defaults: dict | None = None,
+        using_db: BaseDBAsyncClient | None = None,
+        **kwargs: Any,
+    ) -> tuple[Self, bool]:
+        """覆盖get_or_create方法"""
+        group, is_create = await super().get_or_create(
+            defaults=defaults, using_db=using_db, **kwargs
+        )
+        if modules := await PluginInfo.filter(
+            plugin_type__in=[PluginType.NORMAL, PluginType.DEPENDANT],
+            default_status=False,
+        ).values_list("module", flat=True):
+            group.block_plugin = CommonUtils.convert_module_format(modules)  # type: ignore
+            await group.save(using_db=using_db, update_fields=["block_plugin"])
+        return group, is_create
+
+    @classmethod
+    async def update_or_create(
+        cls,
+        defaults: dict | None = None,
+        using_db: BaseDBAsyncClient | None = None,
+        **kwargs: Any,
+    ) -> tuple[Self, bool]:
+        """覆盖update_or_create方法"""
+        group, is_create = await super().update_or_create(
+            defaults=defaults, using_db=using_db, **kwargs
+        )
+        if modules := await PluginInfo.filter(
+            plugin_type__in=[PluginType.NORMAL, PluginType.DEPENDANT],
+            default_status=False,
+        ).values_list("module", flat=True):
+            group.block_plugin = CommonUtils.convert_module_format(modules)  # type: ignore
+            await group.save(using_db=using_db, update_fields=["block_plugin"])
+        return group, is_create
 
     @classmethod
     async def get_group(
@@ -284,9 +343,4 @@ class GroupConsole(Model):
 
     @classmethod
     def _run_script(cls):
-        return [
-            "ALTER TABLE group_console ADD superuser_block_plugin"
-            " character varying(255) NOT NULL DEFAULT '';",
-            "ALTER TABLE group_console ADD superuser_block_task"
-            " character varying(255) NOT NULL DEFAULT '';",
-        ]
+        return []

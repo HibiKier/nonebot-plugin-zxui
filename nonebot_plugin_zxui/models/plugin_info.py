@@ -1,5 +1,6 @@
-from tortoise import fields
 from typing_extensions import Self
+
+from tortoise import fields
 from zhenxun_db_client import Model
 from zhenxun_utils.enum import BlockType, PluginType
 
@@ -80,7 +81,4 @@ class PluginInfo(Model):
 
     @classmethod
     async def _run_script(cls):
-        return [
-            "ALTER TABLE plugin_info ADD COLUMN parent character varying(255);",
-            "ALTER TABLE plugin_info ADD COLUMN is_show boolean DEFAULT true;",
-        ]
+        return []

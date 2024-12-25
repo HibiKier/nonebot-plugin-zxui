@@ -22,10 +22,4 @@ class Statistics(Model):
 
     @classmethod
     async def _run_script(cls):
-        return [
-            "ALTER TABLE statistics RENAME COLUMN user_qq TO user_id;",
-            # 将user_qq改为user_id
-            "ALTER TABLE statistics ALTER COLUMN user_id TYPE character varying(255);",
-            "ALTER TABLE statistics ALTER COLUMN group_id TYPE character varying(255);",
-            "ALTER TABLE statistics ADD bot_id Text DEFAULT '';",
-        ]
+        return []

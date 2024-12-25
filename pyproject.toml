@@ -12,6 +12,7 @@ zhenxun-db-client = "^0.1.1"
 zhenxun-utils = "^0.1.8"
 nonebot-plugin-alconna = "^0.54.1"
 nonebot-plugin-uninfo = "^0.6.2"
+nonebot-plugin-session = "^0.3.2"
 
 
 [build-system]

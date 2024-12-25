@@ -1,6 +1,6 @@
-import nonebot
 from fastapi import APIRouter, Request
 from fastapi.responses import JSONResponse
+import nonebot
 from nonebot import logger
 from nonebot.drivers import Driver
 from tortoise import Tortoise

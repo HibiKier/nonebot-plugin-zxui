@@ -15,7 +15,7 @@ class MenuItem(BaseModel):
 
 
 class MenuData(BaseModel):
-    bot_type: str = "zhenxun"
+    bot_type: str = "nonebot"
     """bot类型"""
     menus: list[MenuItem]
     """菜单列表"""

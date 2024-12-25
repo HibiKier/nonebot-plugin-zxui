@@ -2,9 +2,9 @@ import asyncio
 import contextlib
 import time
 
-import nonebot
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
+import nonebot
 from nonebot import logger
 from nonebot.config import Config
 from starlette.websockets import WebSocket, WebSocketDisconnect, WebSocketState

@@ -1,6 +1,6 @@
-import nonebot
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
+import nonebot
 from nonebot import logger
 from nonebot.config import Config
 
@@ -8,7 +8,6 @@ from ....base_model import BaseResultModel, QueryModel, Result
 from ....utils import authentication
 from .data_source import ApiDataSource
 from .model import AllChatAndCallCount, BotInfo, ChatCallMonthCount, QueryChatCallCount
-
 
 router = APIRouter(prefix="/dashboard")
 

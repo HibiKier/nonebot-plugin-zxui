@@ -1,5 +1,5 @@
-import nonebot
 from fastapi import APIRouter
+import nonebot
 from nonebot import on_message
 from nonebot.adapters import Bot, Event
 from nonebot_plugin_alconna import At, Hyper, Image, Text, UniMsg
