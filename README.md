@@ -32,9 +32,9 @@ _✨ 基于 [NoneBot2](https://github.com/nonebot/nonebot2) 的 小真寻WebUi A
 > <div align="center"><b>小真寻也很可爱呀，也会很喜欢你！</b></div>
 >
 > <div align="center">
-> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxwb/blob/main/docs_image/tt3.png"/>
-> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxwb/blob/main/docs_image/tt1.png"/>
-> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxwb/blob/main/docs_image/tt2.png"/>
+> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxui/blob/main/docs_image/tt3.png"/>
+> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxui/blob/main/docs_image/tt1.png"/>
+> <img width="235" height="235" src="https://github.com/HibiKier/nonebot-plugin-zxui/blob/main/docs_image/tt2.png"/>
 > </div>
 
 ## 💿 安装
@@ -46,6 +46,8 @@ pip install nonebot-plugin-zxui
 ```python
 nb plugin install nonebot-plugin-zxui
 ```
+
+## ⚙️ 配置
 
 ### ZXUI
 
@@ -77,14 +79,14 @@ nb plugin install nonebot-plugin-zxui
 
 <div align="center">
 
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/0.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/1.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/2.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/3.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/4.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/5.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/6.png)
-![x](https://raw.githubusercontent.com/HibiKier/zhenxun_bot_zxui/main/docs_image/7.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/0.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/1.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/2.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/3.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/4.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/5.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/6.png)
+![x](https://raw.githubusercontent.com/HibiKier/nonebot-plugin-zxui/main/docs_image/7.png)
 
 </div>
 
