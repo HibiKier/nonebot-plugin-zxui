@@ -76,6 +76,16 @@ nb plugin install nonebot-plugin-zxui
 
 ## 🎉 帮助
 
+### 访问地址
+
+默认地址为 `nb地址:nb端口` ，可以在nonebot配置文件.env中益智。
+例如 你的env中配置文件为
+```
+HOST=127.0.0.1
+PORT=8080
+```
+那么访问地址为`http://127.0.0.1:8080`
+
 ### 菜单
 
 菜单文件存储在`data/zxui/menu.json`，可以根据自身需求修改，格式如下：
