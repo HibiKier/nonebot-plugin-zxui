@@ -224,7 +224,10 @@ class AuthChecker:
                     logger.debug("插件为HIDDEN，已跳过...")
                     return
                 try:
-                    if session.id1 not in bot.config.superusers:
+                    if (
+                        session.id1 not in bot.config.superusers
+                        or ZxpmConfig.zxpm_limit_superuser
+                    ):
                         await self.auth_bot(plugin, bot.self_id)
                         await self.auth_group(plugin, session, message)
                         await self.auth_admin(plugin, session)

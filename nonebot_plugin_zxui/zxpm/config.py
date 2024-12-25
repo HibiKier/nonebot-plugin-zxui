@@ -19,6 +19,8 @@ class Config(BaseModel):
     """群组插件开关管理对应权限"""
     zxpm_admin_default_auth: int = 5
     """群组管理员默认权限"""
+    zxpm_limit_superuser: bool = False
+    """是否限制超管权限"""
 
 
 ZxpmConfig = nonebot.get_plugin_config(Config)

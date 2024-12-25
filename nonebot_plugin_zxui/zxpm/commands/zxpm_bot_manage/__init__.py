@@ -28,7 +28,7 @@ __plugin_meta__ = PluginMetadata(
     """.strip(),
 )
 
-from zhenxun_utils.log import logger
+from zhenxun_utils.log import logger  # noqa: E402
 
 
 @driver.on_bot_connect
