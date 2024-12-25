@@ -1,5 +1,5 @@
-from nonebot import logger
 import ujson as json
+from nonebot import logger
 
 from ....config import DATA_PATH
 from .model import MenuData, MenuItem
@@ -24,7 +24,7 @@ class MenuManage:
                     default=True,
                 ),
                 MenuItem(
-                    name="真寻控制台",
+                    name="Bot控制台",
                     module="command",
                     router="/command",
                     icon="command",

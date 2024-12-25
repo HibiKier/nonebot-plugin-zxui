@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-zxui"
-version = "0.2.1"
+version = "0.2.7"
 description = ""
 authors = ["HibiKier <775757368@qq.com>"]
 readme = "README.md"
@@ -19,6 +19,8 @@ psutil = "^6.1.1"
 ujson = "^5.10.0"
 python-jose = "^3.3.0"
 python-multipart = "^0.0.20"
+fastapi = "^0.115.6"
+websockets = "^14.1"
 
 
 [build-system]

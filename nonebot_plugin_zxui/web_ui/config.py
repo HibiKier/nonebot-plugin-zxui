@@ -1,5 +1,3 @@
-import nonebot
-from fastapi.middleware.cors import CORSMiddleware
 from strenum import StrEnum
 
 from ..config import DATA_PATH
@@ -13,18 +11,6 @@ TMP_PATH = DATA_PATH / "tmp" / WEBUI_STRING
 TMP_PATH.mkdir(parents=True, exist_ok=True)
 
 WEBUI_DIST_GITHUB_URL = "https://github.com/HibiKier/zhenxun_bot_webui/tree/dist"
-
-app = nonebot.get_app()
-
-origins = ["*"]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 AVA_URL = "http://q1.qlogo.cn/g?b=qq&nk={}&s=160"

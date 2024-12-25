@@ -2,6 +2,7 @@ import asyncio
 
 import nonebot
 from fastapi import APIRouter, FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from nonebot.log import default_filter, default_format
 from zhenxun_utils.log import logger, logger_
 
@@ -64,6 +65,13 @@ async def _():
         app: FastAPI = nonebot.get_app()
         app.include_router(BaseApiRouter)
         app.include_router(WsApiRouter)
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
         await init_public(app)
         logger.info("<g>API启动成功</g>", "WebUi")
     except Exception as e:

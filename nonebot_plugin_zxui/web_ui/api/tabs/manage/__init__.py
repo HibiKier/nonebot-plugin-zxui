@@ -1,8 +1,7 @@
+import nonebot
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-import nonebot
 from nonebot import logger
-from nonebot.adapters.onebot.v11 import ActionFailed
 from zhenxun_utils.enum import RequestHandleType, RequestType
 from zhenxun_utils.exception import NotFoundError
 from zhenxun_utils.platform import PlatformUtils
@@ -173,11 +172,11 @@ async def _(param: HandleRequest) -> Result:
         bot = nonebot.get_bot(param.bot_id)
         try:
             await FgRequest.refused(bot, param.id)
-        except ActionFailed:
-            await FgRequest.expire(param.id)
-            return Result.warning_("请求失败，可能该请求已失效或请求数据错误...")
         except NotFoundError:
             return Result.warning_("未找到此Id请求...")
+        except Exception:
+            await FgRequest.expire(param.id)
+            return Result.warning_("请求失败，可能该请求已失效或请求数据错误...")
         return Result.ok(info="成功处理了请求!")
     except (ValueError, KeyError):
         return Result.warning_("指定Bot未连接...")
@@ -222,7 +221,7 @@ async def _(param: HandleRequest) -> Result:
         try:
             await FgRequest.approve(bot, param.id)
             return Result.ok(info="成功处理了请求!")
-        except ActionFailed:
+        except Exception:
             await FgRequest.expire(param.id)
             return Result.warning_("请求失败，可能该请求已失效或请求数据错误...")
     except (ValueError, KeyError):
