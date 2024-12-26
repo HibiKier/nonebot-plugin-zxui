@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Any, Generic, TypeVar
 
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
 
 T = TypeVar("T")
 
@@ -58,20 +58,20 @@ class QueryModel(BaseModel, Generic[T]):
     """页数"""
     size: int
     """每页数量"""
-    data: T
+    data: T | None = None
     """携带数据"""
 
-    @validator("index")
-    def index_validator(cls, index):
-        if index < 1:
-            raise ValueError("查询下标小于1...")
-        return index
+    # @validator("index")
+    # def index_validator(cls, index):
+    #     if index < 1:
+    #         raise ValueError("查询下标小于1...")
+    #     return index
 
-    @validator("size")
-    def size_validator(cls, size):
-        if size < 1:
-            raise ValueError("每页数量小于1...")
-        return size
+    # @validator("size")
+    # def size_validator(cls, size):
+    #     if size < 1:
+    #         raise ValueError("每页数量小于1...")
+    #     return size
 
 
 class BaseResultModel(BaseModel):

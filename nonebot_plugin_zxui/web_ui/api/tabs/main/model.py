@@ -1,6 +1,7 @@
 from typing import Any
 
 from nonebot.adapters import Bot
+from nonebot.compat import PYDANTIC_V2
 from nonebot.config import Config
 from pydantic import BaseModel
 
@@ -85,6 +86,9 @@ class BaseInfo(BaseModel):
 
     class Config:
         arbitrary_types_allowed = True
+
+    def to_dict(self):
+        return self.model_dump() if PYDANTIC_V2 else self.dict()
 
 
 class TemplateBaseInfo(BaseInfo):

@@ -1,6 +1,11 @@
 from pydantic import BaseModel
 
 
+class SqlLogInfo(BaseModel):
+    sql: str
+    """sql语句"""
+
+
 class SqlText(BaseModel):
     """
     sql语句

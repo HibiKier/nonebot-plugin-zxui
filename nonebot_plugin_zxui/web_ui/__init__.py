@@ -4,8 +4,8 @@ import nonebot
 from zhenxun_utils.log import logger, logger_
 
 try:
-    from fastapi.middleware.cors import CORSMiddleware
     from fastapi import APIRouter, FastAPI
+    from fastapi.middleware.cors import CORSMiddleware
 
     app = nonebot.get_app()
     if app and isinstance(app, FastAPI):
@@ -20,6 +20,7 @@ except Exception as e:
     logger.warning("加载FastAPI失败...", "WebUi", e=e)
 else:
     from nonebot.log import default_filter, default_format
+
     from .api.logs import router as ws_log_routes
     from .api.logs.log_manager import LOG_STORAGE
     from .api.menu import router as menu_router
