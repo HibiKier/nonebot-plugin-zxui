@@ -512,6 +512,23 @@ nonebot2 = ">=2.2.0,<3.0.0"
 pydantic = ">=1.10.0,<2.5.0 || >2.5.0,<2.5.1 || >2.5.1,<3.0.0"
 
 [[package]]
+name = "nonebot-plugin-localstore"
+version = "0.7.3"
+description = "Local Storage Support for NoneBot2"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "nonebot_plugin_localstore-0.7.3-py3-none-any.whl", hash = "sha256:1bc239b4b5320df0dc08eada7c4f8ba4cb92d4dc3134bf4646ab5e297bd7e575"},
+    {file = "nonebot_plugin_localstore-0.7.3.tar.gz", hash = "sha256:1aff10e2dacfc5bc9ce239fd34849f8d7172a118135dbc5aeba1c97605d9959d"},
+]
+
+[package.dependencies]
+nonebot2 = ">=2.3.0,<3.0.0"
+nonestorage = ">=0.1.0,<0.2.0"
+pydantic = ">=1.10.0,<2.5.0 || >2.5.0,<2.5.1 || >2.5.1,<3.0.0"
+typing-extensions = ">=4.0.0,<5.0.0"
+
+[[package]]
 name = "nonebot-plugin-session"
 version = "0.3.2"
 description = "Nonebot2 会话信息提取与会话id定义"
@@ -587,6 +604,17 @@ fastapi = ["fastapi (>=0.93.0,<1.0.0)", "uvicorn[standard] (>=0.20.0,<1.0.0)"]
 httpx = ["httpx[http2] (>=0.26.0,<1.0.0)"]
 quart = ["Quart (>=0.18.0,<1.0.0)", "uvicorn[standard] (>=0.20.0,<1.0.0)"]
 websockets = ["websockets (>=10.0)"]
+
+[[package]]
+name = "nonestorage"
+version = "0.1.0"
+description = "Simple library that provides local storage folder detect"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "nonestorage-0.1.0-py3-none-any.whl", hash = "sha256:35811adf67c680c272bcb71fa9d6c3613cc2d1bb79f5bfc7d83c4412a79537cb"},
+    {file = "nonestorage-0.1.0.tar.gz", hash = "sha256:818232236455c79cabbb69e716f73aa1b9c21d579f1c1fcbdba273b60bac72d9"},
+]
 
 [[package]]
 name = "pillow"
@@ -1688,4 +1716,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "9bf29ffb734e257b673d8b1d9b9a37924c109de7380ffc8855d5225873728da9"
+content-hash = "65987f31680834ba09bb48bbb3ba85b8a3906e9e946a2f9c59ccb9878c0ebb90"

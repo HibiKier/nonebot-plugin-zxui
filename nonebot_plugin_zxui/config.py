@@ -1,17 +1,13 @@
-from pathlib import Path
-
 import nonebot
+import nonebot_plugin_localstore as store
 from pydantic import BaseModel
 
-DEFAULT_DATA_PATH = Path() / "data" / "zxui" / "zxpm"
+store.get_plugin_data_dir()
 
 
 class Config(BaseModel):
     zxui_db_url: str = ""
     """数据库连接地址"""
-
-    zxui_data_path: str | Path | None = None
-    """数据存储路径"""
 
     zxui_username: str
     """用户名"""
@@ -25,8 +21,6 @@ class Config(BaseModel):
     zxui_enable_call_history: bool = True
     """是否开启调用记录存储"""
 
-    zxpm_data_path: str | Path = str(DEFAULT_DATA_PATH.absolute())
-    """数据存储路径"""
     zxpm_notice_info_cd: int = 300
     """群/用户权限检测等各种检测提示信息cd，为0时不提醒"""
     zxpm_ban_reply: str = "才不会给你发消息."
@@ -41,19 +35,12 @@ class Config(BaseModel):
 
 config = nonebot.get_plugin_config(Config)
 
-if not config.zxui_data_path:
-    config.zxui_data_path = Path() / "data" / "zxui"
-
-if isinstance(config.zxui_data_path, str):
-    config.zxui_data_path = Path(config.zxui_data_path)
-
-config.zxui_data_path.mkdir(parents=True, exist_ok=True)
+DATA_PATH = store.get_plugin_data_dir()
 
 if not config.zxui_db_url:
-    db_path = config.zxui_data_path / "db" / "zhenxun.db"
+    db_path = DATA_PATH / "db" / "zhenxun.db"
     db_path.parent.mkdir(parents=True, exist_ok=True)
     config.zxui_db_url = f"sqlite:{db_path.absolute()}"
 
-DATA_PATH = config.zxui_data_path
 
 SQL_TYPE = config.zxui_db_url.split(":")[0]

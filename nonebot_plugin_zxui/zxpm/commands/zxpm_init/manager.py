@@ -1,5 +1,4 @@
 from copy import deepcopy
-from pathlib import Path
 
 from ruamel.yaml import YAML
 from zhenxun_utils.enum import BlockType, LimitCheckType, PluginLimitType
@@ -7,7 +6,7 @@ from zhenxun_utils.log import logger
 
 from ....models.plugin_info import PluginInfo
 from ....models.plugin_limit import PluginLimit
-from ...config import ZxpmConfig
+from ...config import zxpm_data_path
 from ...extra.limit import BaseBlock, PluginCdBlock, PluginCountBlock
 
 _yaml = YAML(pure=True)
@@ -62,9 +61,7 @@ class Manager:
     """
 
     def __init__(self):
-        if isinstance(ZxpmConfig.zxpm_data_path, str):
-            ZxpmConfig.zxpm_data_path = Path(ZxpmConfig.zxpm_data_path)
-        BASE_PATH = ZxpmConfig.zxpm_data_path / "configs"
+        BASE_PATH = zxpm_data_path / "configs"
         BASE_PATH.mkdir(parents=True, exist_ok=True)
         self.cd_file = BASE_PATH / "plugins2cd.yaml"
         self.block_file = BASE_PATH / "plugins2block.yaml"

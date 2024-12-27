@@ -49,6 +49,15 @@ nb plugin install nonebot-plugin-zxui
 
 ## ⚙️ 配置
 
+在`.env`中添加`localstore`配置方便数据文件修改配置：
+
+```
+LOCALSTORE_PLUGIN_DATA_DIR='{
+  "nonebot_plugin_zxui": "data/zxui"
+}
+'
+```
+
 ### ZXUI
 
 | 配置                    | 类型 |            默认值             | 说明                                                             |
