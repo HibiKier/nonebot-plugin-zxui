@@ -44,6 +44,8 @@ async def _handle_setting(
         extra_data.plugin_type = PluginType.HIDDEN
     if extra_data.plugin_type == PluginType.HIDDEN:
         extra_data.menu_type = ""
+    if extra_data.author:
+        extra_data.author = str(extra_data.author)
     if plugin.sub_plugins:
         extra_data.plugin_type = PluginType.PARENT
     plugin_list.append(

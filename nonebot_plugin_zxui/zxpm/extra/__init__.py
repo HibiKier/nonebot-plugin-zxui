@@ -1,3 +1,5 @@
+from typing import Any
+
 from nonebot.compat import PYDANTIC_V2
 from pydantic import BaseModel
 from zhenxun_utils.enum import PluginType
@@ -25,7 +27,7 @@ class PluginExtraData(BaseModel):
     插件扩展信息
     """
 
-    author: str | None = None
+    author: Any = None
     """作者"""
     version: str | None = None
     """版本"""
