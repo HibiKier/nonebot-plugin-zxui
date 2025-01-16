@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot-plugin-zxui"
-version = "0.3.3"
+version = "0.3.4"
 description = ""
 authors = ["HibiKier <775757368@qq.com>"]
 readme = "README.md"
